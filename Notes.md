@@ -1,19 +1,39 @@
 # List of the All Popular layouts
 
 
+
+##Kinds of websites
 * Personal website layout
 * Provisional Website layout
 * Shopping website
 * Social website - ecommers
 * Photo Gallery
 * Social media
-* 
+* Tv vedio Streaming
+* Blog
+
+##I want to replecante TODO
+* amazon
+* amazon music
+* amazon prime vedio
+* netflix
+* hotstar
+* wikipedia
+* Geeks for geeks
 
 
-Major css use
+
+
+
+
+##Major css use
 * Flex
 * Grid
 
+
+##Main
+* Special cards
+* conversation
 
 
 ## Todo
