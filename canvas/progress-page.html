@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>progress page</title>
+		<style>
+			.progess-bar
+			{
+				color:blue;
+				border-style:dashed;
+				position:absolute;
+				height:200px;
+				width:200px;
+				top:200px;
+				left:100px;
+			}
+			.progess-bar2
+			{
+				color:blue;
+				border-style:dashed;
+				position:absolute;
+				height:200px;
+				width:200px;
+				top:200px;
+				left:400px;
+			}
+			.progess-bar3
+			{
+				color:blue;
+				border-style:dashed;
+				position:absolute;
+				height:200px;
+				width:200px;
+				top:200px;
+				left:700px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="mc" class="progess-bar">
+		
+		</canvas>
+		<script>
+			var x=50,y=60,z=70;
+			
+			
+			var canvas = document.getElementById("mc");
+			var c = canvas.getContext("2d");
+			c.fillStyle ="black";
+			c.fillRect(100,100-x,40,x);
+			c.fillStyle ="blue";
+			c.fillRect(150,100-y,40,y);
+			c.fillStyle ="green";
+			c.fillRect(200,100-z,40,z);
+			documnet.write("q1");
+		</script>
+	
+		<canvas id="mc2" class="progess-bar2">
+		Q2
+		</canvas>
+		<script>
+			var x=10,y=20,z=40;
+			
+			
+			var canvas = document.getElementById("mc2");
+			var c = canvas.getContext("2d");
+			c.fillStyle ="black";
+			c.fillRect(100,100-x,40,x);
+			c.fillStyle ="blue";
+			c.fillRect(150,100-y,40,y);
+			c.fillStyle ="green";
+			c.fillRect(200,100-z,40,z);
+		</script>
+		
+		<canvas id="mc3" class="progess-bar3">
+		Q1
+		</canvas>
+		<script>
+			var x=20,y=60,z=10;
+			
+			
+			var canvas = document.getElementById("mc3");
+			var c = canvas.getContext("2d");
+			c.fillStyle ="black";
+			c.fillRect(100,100-x,40,x);
+			c.fillStyle ="blue";
+			c.fillRect(150,100-y,40,y);
+			c.fillStyle ="green";
+			c.fillRect(200,100-z,40,z);
+		</script>
+
+		
+	</body>
+</html>

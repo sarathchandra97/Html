@@ -1,0 +1,244 @@
+<html>
+<head>   
+	<style>
+		div{
+			display:block;
+			}
+		.head{text-shadow:10px 10px 6px black;
+			font-size:100px;
+			margin-width:0px;
+			color:blue;
+			letter-spacing:6px;
+			word-spacing:10px;
+			font-family:georgia;
+			text-align:center;
+			border-style:dashed;
+			width:1350px;
+			height:185px;
+			}
+		.ques{text-shadow:10px 10px 6px black;
+			font-size:30px;
+			margin-width:0px;
+			color:green;
+			letter-spacing:4px;
+			position:absolute;
+			top:200px;
+			left:300px;
+			word-spacing:10px;
+			font-family:arial;
+			
+
+			border-style:dashed;
+			box-sizing:border-box;
+			 
+			height:450px;
+			width:1060px;
+			 
+			}
+		.timer{text-shadow:10px 10px 6px black;
+			font-size:30px;
+			margin-width:0px;
+			color:red;
+			letter-spacing:4px;
+			position:absolute;
+			top:200px;
+			word-spacing:10px;
+			font-family:lucida;
+			text-align:center;
+			border-style:dashed;
+			box-sizing:border-box;
+			height:450px;
+			width:290px;
+			}
+		.image{margin-width:0px;
+			position:absolute;
+			top:50px;
+			left:100px;
+			color:yellow;
+			box-sizing:border-box;
+			height:150px;
+			width:700px;
+			margin: auto;
+
+			border-style:dashed;
+			
+			
+			}
+		.opt{
+			color:black;
+			position:absolute;
+			height:200px;
+			width:200px;
+			top:220px;
+			left:100px;
+			border: 2px dashed black;
+			}
+		input{color:black;
+			background-color:white;
+			border:2px dashed black;
+			width:100px;
+			height:30px;
+			 }
+		input:hover{
+			color:white;
+			background-color:black;
+			width:120px;
+			height:40px;
+			box-shadow:5px 5px 5px black;}
+		.next{ position:absolute;
+			bottom:20px;
+			right:50px;	
+			
+			}
+		.next input:hover{
+			color:black;
+			background-color:white;
+			width:120px;
+			height:40px;
+			box-shadow:1px 1px 100px black;}
+		
+		
+	</style>
+
+</head>    
+<body>
+<div class="head">		In time
+	</div>
+ <div class="timer"><body onload="startTime()">
+
+
+<canvas id="mc" width="1000" height="1000" >
+ </canvas>
+<script>
+var i=0,k=0,s=0,w=0;
+var canvas = document.getElementById("mc");
+var c = canvas.getContext("2d");
+var img = document.getElementById("sa");
+
+
+for(i=1;i<50;i++)
+{
+for(j=i;j<100-i;j++)
+		{
+			c.fillStyle ="red";
+			c.fillRect(100+j,100+i,1,1);
+		
+		}
+}
+
+function startTime() {
+ 
+     i=i+1;
+
+if(k==0)
+{
+	  
+	 	 for(w=0;w<=i/30;w++)
+		 {
+		 for(j=0;j<100;j++)
+		 {
+			c.fillStyle ="white";
+			c.fillRect(100+ j,100+w,1,1);
+		 }
+		}
+		 
+		 
+	for(j=48;j<52;j++)
+		{
+			c.fillStyle="red";
+			c.fillRect(100+ j,100+ i,1,1);
+			
+		}
+}
+if(k==1)
+{
+		
+    for(w=i/3+5;w<=i/3+5;w++)
+		{
+	 	 
+		 for(j=0;j<=100;j++)
+		 {
+			c.fillStyle ="white";
+			c.fillRect(100+j,100+w,1,1);
+		 }
+		}
+		if(i>120)
+		for(w=0;w<=50;w++)
+		{
+	 	 
+		 for(j=0;j<=100;j++)
+		 {
+			c.fillStyle ="white";
+			c.fillRect(100+j,100+w,1,1);
+		 }
+		}
+		
+	
+	 	if(i>120)
+		{
+			 
+		 
+			for(j=48;j<=52;j++)
+			 {
+			c.fillStyle ="white";
+			c.fillRect(100+j,100+i-70,1,1);
+		 	 }
+			 
+		}
+		 
+		
+		
+		for(w=150-i/3;w<150;w++)
+		{
+	 	s++
+		 for(j=50-s;j<=50+s;j++)
+		 {
+			c.fillStyle ="red";
+			c.fillRect(100+j,100+w,1,1);
+		 }
+		}
+		s=0;
+	 
+}
+	
+	 if(i>149&&k==0)
+{
+	i=0;
+	k=1;
+}
+	if(i>170)
+{
+		i=0;
+}
+	 
+    var t = setTimeout(startTime,60);
+	 
+}
+ 
+</script>
+ 
+</div>
+<div class="ques">
+			<div class="image"><img src="2.png"></img>
+			</div>
+			<form>
+			<div class="opt">
+				<ul>
+			 	<li><input type="button"   value="option1">
+				<li><input type="button" value="option1">
+				<li><input type="button"   value="option1">
+				<li><input type="button"  value="option1">
+			 	</ul>
+			<form>
+			</div>
+			<div class="next">
+				
+				<input type="button"   value="next>>>">
+			<div>
+<div>
+	
+</body>
+</html>
+
+
+

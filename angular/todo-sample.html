@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='tsm'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="todo-sample.js"></script>
+</head>
+<body ng-controller='tsc as tsc'>
+    <input type="text" ng-model="tsc.tobeadded">
+    {{name}}
+    hello
+    {{tsc.names[0]}}
+    <ul>
+        <li ng-repeat='name in tsc.names'>{{name}}</li>
+    </ul>
+    <form ng-submit='tsc.add()'>
+        <input type="submit">
+    </form>
+</body>
+</html>

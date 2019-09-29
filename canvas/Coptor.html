@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+    border:8px solid black;
+    background-color: #f1f1f1;
+}
+	.label{
+	height : 50px;
+	width : 100px;
+	background-color : lightblue;
+	color : black;
+	font-size : 25px;
+	margin : 10px;
+	border-sizing : border-box;
+	float : left;
+	padding : 10px;
+	align : center;
+	}
+	.notify
+	{ 
+		
+		color:red;
+		opacity:0.5;
+		z-index:1;
+		visibility:hidden;
+		font-size:200px;
+		background-color:white;
+		position:absolute;
+		height:520px;
+		width:1320px;
+		top:0px;
+		left:0px;
+		box-sizing:border-box;
+		padding:150px 0px 0px 200px;
+	}
+</style>
+</head>
+<body onload="startGame()">
+<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+<script>
+var myGamePiece;
+var time=0;
+var score=0;
+var foodx=10,foody=20;
+var scale=20;
+var gameStatus="notover";
+var accelaration=1;
+var frameRate=65;
+var canvasHeight=500,canvasWidth=1300;
+var delay=0,level=4,benchPoint=3;	
+var down=[],up=[];  
+
+ 
+function startGame() {
+    myGamePiece = new component(20, 20, "red", 10, 11);
+    myGameArea.start();
+}
+for(q=0;q<65;q++)
+{ up.push(0);
+  down.push(0);	
+}
+up.push(9);
+down.push(3);
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    
+    start : function() {
+        this.canvas.width = canvasWidth;
+        this.canvas.height = canvasHeight;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+	this.interval = setInterval(updateGameArea,frameRate);
+    },
+  
+}
+
+
+function component(width, height, color, x, y) {
+   
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y; 	   
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x*scale,this.y*scale,scale-1, scale-1);
+    }
+    this.newPos = function() {
+	this.x+=this.speedX;
+	this.y+=this.speedY;
+          
+    } 
+    this.clear=function() {
+        myGameArea.context.clearRect(0,0,1300,1300);
+    }   
+ 
+}
+
+
+function checkForEdge()
+{
+	gp=myGamePiece;
+	
+	if(gp.x>63||gp.x<0||gp.y<0||gp.y>24)
+	{
+		document.getElementById("gameStatus").innerHTML="GameOver";
+		document.getElementById("gameStatus").style.visibility="visible";
+		gameStatus="over";
+	}
+}
+
+function updateTimeAndScore()
+{
+	document.getElementById("time").innerHTML="time: "+time+"";
+	document.getElementById("score").innerHTML="score: "+score+"";
+	document.getElementById("level").innerHTML="level: "+level+"";
+	
+}
+function updateBlocks(){
+	document.getElementById("test").innerHTML=up[65]+" "+down[65];
+	newup=Math.max(6,Math.floor(Math.random() * 4) + up[65]-2);
+	newdown=Math.max(4,Math.floor(Math.random() * 4) + down[65]-2);
+	if(newdown>20-newup)
+	newdown=20-newup;
+	up.push(newup);
+	down.push(newdown);
+	up.shift();
+	down.shift();
+	context=myGameArea.context;
+	context.fillStyle = "red";
+	for(q=0;q<65;q++)
+	{
+		context.fillRect(q*scale,1,scale-1,up[q]*scale);
+		context.fillStyle = "red";
+		context.fillRect(q*scale,(25-down[q])*scale,scale-1,down[q]*scale);
+	}
+}
+function checkForTouch(){
+	gp=myGamePiece;
+	if(gp.y<=up[gp.x]-1 || gp.y>=25-down[gp.x]-1)
+	{
+		document.getElementById("gameStatus").innerHTML="GameOver";
+		document.getElementById("gameStatus").style.visibility="visible";
+		gameStatus="over";
+		context=myGameArea.context;
+		context.fillStyle = "yellow";
+		context.fillRect(gp.x*scale,gp.y*scale,scale,scale);
+	
+	}
+	
+}
+function updateGameArea() {
+	delay++;
+        delay=delay%level;
+	 checkForEdge();
+	 checkForTouch();
+	if(gameStatus=="notover"&&delay==0)
+        { 
+            time++;
+	  
+	    updateTimeAndScore();
+   	   
+	    myGamePiece.clear();
+	    myGamePiece.newPos();
+            
+	    updateBlocks();  
+           
+  	    myGamePiece.update();
+	}
+	
+}
+ $(document).ready(function(){
+       $("*").keydown(function(e){
+	
+	
+	if(e.which==37)
+	{
+		if(gameStatus=="paused")
+		{
+			document.getElementById("gameStatus").style.visibility="hidden";
+			gameStatus="notover";
+		}
+		myGamePiece.speedY=0;
+		myGamePiece.speedX =- accelaration; 
+	}
+        if(e.which==38)
+	{
+		if(gameStatus=="paused")
+		{
+			 document.getElementById("gameStatus").style.visibility="hidden";
+			gameStatus="notover";
+		}
+		myGamePiece.speedX=0;
+		myGamePiece.speedY =- accelaration; 
+	}
+	
+	if(e.which==39)
+	{
+		if(gameStatus=="paused")
+		{
+			document.getElementById("gameStatus").style.visibility="hidden";
+		     gameStatus="notover";
+		}
+		myGamePiece.speedY=0;
+		myGamePiece.speedX = accelaration;
+	} 
+        if(e.which==40)
+	{
+		if(gameStatus=="paused")
+		{
+
+			document.getElementById("gameStatus").style.visibility="hidden";
+			gameStatus="notover";
+		}
+		myGamePiece.speedX=0;
+		myGamePiece.speedY = accelaration;
+	} 
+	if(e.which==32)
+	{
+		
+		myGamePiece.speedX=0;
+		myGamePiece.speedY=0;
+		if(gameStatus=="notover")
+		{
+		document.getElementById("gameStatus").innerHTML="Paused";
+		document.getElementById("gameStatus").style.visibility="visible";
+	        gameStatus="paused";
+		}
+		
+		
+	}
+	if(e.which==76)
+	{
+		if(level>1)
+		level=level-1;
+	}
+	
+	
+    });
+});
+</script>
+
+ <div class="label"  id="time" >time : 0 </div>
+<div class="label" id="score" >score : 0 </div>
+<div class="label" id="level" >level : 0 </div>	
+<div class="label" id="test" ></div>	
+<div id="gameStatus" class="notify" id="n"></div>
+
+</body>
+</html>

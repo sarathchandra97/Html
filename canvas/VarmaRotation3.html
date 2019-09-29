@@ -1,0 +1,240 @@
+<html>
+<head>
+	<title>rotate cube</title>
+	<style>
+		test{
+			position : absolute;
+			width : 500px;
+			height : 800px;
+			border : 1px solid black;
+			float : right;
+			right : 0px;
+			top : 0px;
+			}
+		canvas{
+			border : 1px solid black;
+			}
+	</style>
+	
+	
+</head>
+<body>
+<test id="test"></test>
+	<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+	<script>
+		scale=100;
+		time=0;
+		angle=1;
+		xangle=0;
+		yangle=0;
+		xanglespeed=0;
+		yanglespeed=0;
+		interval=setInterval(fun,100);
+
+		canvas = document.createElement("canvas");
+		canvas.height = 500;
+		canvas.width = 500;
+		context = canvas.getContext("2d");
+		document.body.insertBefore(canvas, document.body.childNodes[0]);
+		points=[];
+		opoints=[];
+		oopoints=[];
+		one=[-scale,-scale,-scale];
+		two=[-scale,scale,-scale];
+		three=[scale,scale,-scale];
+		four=[scale,-scale,-scale];
+		five=[-scale,-scale,scale];
+		six=[-scale,scale,scale];
+		seven=[scale,scale,scale];
+		eight=[scale,-scale,scale];
+
+		center=[100+scale,100+scale,100+scale];
+		
+		
+		opoints.push([0,0,0]);
+		opoints.push([-scale,-scale,-scale]);
+		opoints.push([-scale,scale,-scale]);
+		opoints.push([scale,scale,-scale]);
+		opoints.push([scale,-scale,-scale]);
+		opoints.push([-scale,-scale,scale]);
+		opoints.push([-scale,scale,scale]);
+		opoints.push([scale,scale,scale]);
+		opoints.push([scale,-scale,scale]);
+		
+		oopoints.push([0,0,0]);
+		oopoints.push([-scale,-scale,-scale]);
+		oopoints.push([-scale,scale,-scale]);
+		oopoints.push([scale,scale,-scale]);
+		oopoints.push([scale,-scale,-scale]);
+		oopoints.push([-scale,-scale,scale]);
+		oopoints.push([-scale,scale,scale]);
+		oopoints.push([scale,scale,scale]);
+		oopoints.push([scale,-scale,scale]);
+
+
+		points.push([0,0,0]);
+		points.push(one);
+		points.push(two);
+		points.push(three);
+		points.push(four);
+		points.push(five);
+		points.push(six);
+		points.push(seven);
+		points.push(eight);	
+		
+		lines=[];
+		lines.push([1,2]);
+		lines.push([2,3]);
+		lines.push([3,4]);
+		lines.push([4,1]);
+		lines.push([5,6]);
+		lines.push([6,7]);
+		lines.push([7,8]);
+		lines.push([8,5]);
+		lines.push([1,5]);
+		lines.push([2,6]);
+		lines.push([3,7]);
+		lines.push([4,8]);
+		function updateCube(){
+			for(l=0;l<lines.length;l++)
+			{
+			context.beginPath(); context.moveTo(points[lines[l][0]][0] + center[0], points[lines[l][0]][1] + center[1]) ; context.lineTo(points[lines[l][1]][0] + center[0], points[lines[l][1]][1] + center[1]); context.stroke();
+			}
+		}
+		function clear(){
+			context.clearRect(0,0,1300,1300);
+		}
+		function updatePosition(){
+			testvalues="";
+			for(q=1;q<opoints.length;q++)
+			testvalues=testvalues+opoints[q]+"</br> ";
+			testvalues=testvalues+"</br> ";
+				
+			xangle+=xanglespeed;
+			yangle+=yanglespeed;
+			xangle=xangle%360;
+			yangle=yangle%360;
+			//y rotation
+			
+			ycos=Math.cos(yangle*(Math.PI/180));
+			ysin=Math.sin(yangle*(Math.PI/180));
+			xcos=Math.cos(xangle*(Math.PI/180));
+			xsin=Math.sin(xangle*(Math.PI/180));
+			if(xanglespeed==0)
+			for(q=1;q<opoints.length;q++)
+			{
+				x=opoints[q][0];
+				y=opoints[q][1];
+				z=opoints[q][2];
+			
+				
+				
+				
+				
+				
+				x=z*ysin + x*ycos;
+				y= y;
+				z=z*ycos - x*ysin;
+				
+				
+				points[q][0]=x;
+				points[q][1]=y;
+				points[q][2]=z;
+			}
+			if(yanglespeed==0)
+			for(q=1;q<opoints.length;q++)
+			{
+				x=opoints[q][0];
+				y=opoints[q][1];
+				z=opoints[q][2];
+			
+				
+				
+				
+				
+				
+				
+				testvalues=testvalues+x+" "+y+" "+z+"</br> ";
+				x=x;
+				y=y*xcos - z*xsin;
+				z=y*xsin + z*xcos;
+				
+				points[q][0]=x;
+				points[q][1]=y;
+				points[q][2]=z;
+			}
+			
+			testvalues=testvalues+"</br> ";
+			for(q=1;q<opoints.length;q++)
+			testvalues=testvalues+points[q]+"</br> ";
+			testvalues=testvalues+"</br> ";
+			testvalues=testvalues+" xanglespeed "+xanglespeed+"</br>";
+			testvalues=testvalues+" yanglespeed "+yanglespeed+"</br>";
+			testvalues=testvalues+" xangle "+xangle+"</br>";
+			testvalues=testvalues+" yangle "+yangle+"</br>";	
+			document.getElementById("test").innerHTML=testvalues;
+				
+			
+			
+		}
+		function fun()
+		{
+			time++;
+			
+			clear();
+			updatePosition();
+			updateCube();
+		}
+		function rotate(){
+			
+			
+			ycos=Math.cos(yangle*(Math.PI/180));
+			ysin=Math.sin(yangle*(Math.PI/180));
+			xcos=Math.cos(xangle*(Math.PI/180));
+			xsin=Math.sin(xangle*(Math.PI/180));
+			if(xanglespeed==0)
+			for(q=1;q<opoints.length;q++)
+			{
+				
+				opoints[q][0]=points[q][0];
+				opoints[q][1]=points[q][1];
+				opoints[q][2]=points[q][2];
+			}
+		
+		}
+
+	$(document).ready(function(){
+		$("*").keydown(function(e){
+			
+			rotate();
+			if(e.which==37)
+			{
+				xanglespeed=0;
+				yanglespeed -= angle;
+				
+			}
+			if(e.which==38)
+			{
+				yanglespeed=0;
+				xanglespeed -= angle;
+				
+			}
+			if(e.which==39)
+			{
+				xanglespeed=0;
+				yanglespeed += angle;
+				
+			}
+			if(e.which==40)
+			{
+				yanglespeed=0;
+				xanglespeed += angle;
+				
+			}
+			
+		});
+	});
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sample buses</title>
+    <link rel="stylesheet" href="./modules/css/bootstrap.min.css">
+    <script src="./modules/jquery.js"></script>
+    <script src="./modules/js/bootstrap.js"></script>
+    <script>
+    function draw20(){
+    }
+    </script>
+    <style>
+        .seat{
+            border: 1px solid black;
+            border-radius: 10%;
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+            display: inline-c;
+        }
+        #bus1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-sm-4" id="bus1">
+                <h3>bus1</h3>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="col-sm-4">
+                <h3>bus2</h3>
+            </div>
+            <div class="col sm-4">
+                <h3>bus3</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sample-angilar</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header class="jumbotron">
+                <h1>Sample for angular <small>Learn angular</small></h1>
+        </header>
+        <label for="Name">name</label>
+        <input type="text" placeholder="enter your name" class="form-control col-md-3 " ng-model="yourName" >
+        <br>
+        <h2 class="text-muted">Hello {{yourName}}!!</h2>
+    </div>
+    
+</body>
+</html>

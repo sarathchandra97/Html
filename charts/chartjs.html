@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart js Demo Test</title>
+    <link rel="short icon" href="../assets/s-icon.png">
+    <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
+   <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+<body class="bg-dark container">
+        <div class="navbar text-white float-right sticky-top h6" >
+                <div class="nav-item"><a href="#" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="#" class="nav-link">Comb</a></div>
+                <div class="nav-item"><a href="#" class="nav-link">Comb</a></div>
+        </div> 
+        
+    <div class="jumbotron pt-2 ">
+       
+        <div class="display-3">Charts or Graphs</div>
+        <small>It is small demo to use graphs</small>
+    </div>
+    <div class="row mb-2">
+        <div class="card bg-dark col-md-6 border-white">
+                <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-md-6 mt-1 bg-dark text-white">This Graph represent the Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minus natus nostrum aut quia, temporibus est cumque, laudantium beatae illum, quam accusamus facere corrupti nisi eum. Tenetur corrupti voluptates molestias.</div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-6 mt-1 bg-dark text-white">This Graph represent the Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minus natus nostrum aut quia, temporibus est cumque, laudantium beatae illum, quam accusamus facere corrupti nisi eum. Tenetur corrupti voluptates molestias.</div>
+        
+        <div class="card bg-dark col-md-6 border-white">
+                <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+    <div class="row mb-2">
+         
+            <div class="card bg-dark col-md-6 border-white">
+                    <canvas id="myChart3"></canvas>
+            </div>
+        <div class="col-md-6 mt-1 bg-dark text-white">This Graph represent the Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minus natus nostrum aut quia, temporibus est cumque, laudantium beatae illum, quam accusamus facere corrupti nisi eum. Tenetur corrupti voluptates molestias.</div>
+       
+    </div>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+Chart.defaults.global.defaultFontColor = 'white';
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: 'Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(0, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+xAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    display:false
+                }   
+            }]
+    }
+
+    }
+});
+var ctx2 = document.getElementById("myChart2").getContext('2d');
+var myChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: 'Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(0, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+    xAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    display:false
+                }   
+            }]
+    }
+
+    }
+});
+var ctx3 = document.getElementById("myChart3").getContext('2d');
+var myChart = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: 'Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(0, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: { xAxes: [{
+                   gridLines: {
+                    display:false
+                }
+            }],yAxes: [{
+                gridLines: {
+                    display:false
+                }   
+            }]
+    }
+
+    }
+});
+
+
+</script>
+</body>
+</html>

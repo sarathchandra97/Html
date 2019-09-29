@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+    border:8px solid black;
+    background-color: #f1f1f1;
+}
+	.label{
+	height : 50px;
+	width : 100px;
+	background-color : lightblue;
+	color : black;
+	font-size : 25px;
+	margin : 10px;
+	border-sizing : border-box;
+	float : left;
+	padding : 10px;
+	align : center;
+	}
+	.notify
+	{ 
+		
+		color:red;
+		opacity:0.5;
+		z-index:1;
+		visibility:hidden;
+		font-size:200px;
+		background-color:white;
+		position:absolute;
+		height:520px;
+		width:1320px;
+		top:0px;
+		left:0px;
+		box-sizing:border-box;
+		padding:150px 0px 0px 200px;
+	}
+</style>
+</head>
+<body onload="startGame()">
+
+<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+<script>
+var myGamePiece;
+var time=0;
+var score=0;
+var foodx=10,foody=20;
+var scale=20;
+var gameStatus="notover";
+var accelaration=1;
+var frameRate=65;
+var canvasHeight=500,canvasWidth=1300;
+var delay=0,level=4,benchPoint=3;
+ var xaxis=[];
+ var yaxis=[];	
+  
+
+ 
+function startGame() {
+    myGamePiece = new component(20, 20, "red", 1, 6);
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    
+    start : function() {
+        this.canvas.width = canvasWidth;
+        this.canvas.height = canvasHeight;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+	var x=this.context;
+	 x.fillStyle ="green";
+        for(q=-9;q<=9;q++)
+	for(w=-9;w<=9;w++)
+	{
+		if(q*q+w*w<(scale*scale)/4)
+			x.fillRect(foodx*scale+q+9,foody*scale+w+9,1,1);
+	}
+        this.interval = setInterval(updateGameArea,frameRate);
+    },
+  
+}
+
+function component(width, height, color, x, y) {
+   
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y; 
+    xaxis.push(x);
+    yaxis.push(y);	   
+    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+	for(q=0;q<xaxis.length;q++)
+        ctx.fillRect(xaxis[q]*scale,yaxis[q]*scale,scale-1, scale-1);
+    }
+    this.newPos = function() {
+	
+        xaxis.unshift(xaxis[0]+this.speedX);
+        yaxis.unshift(yaxis[0]+this.speedY);
+         xaxis.pop();
+	yaxis.pop();    
+    } 
+    this.clear=function() {
+	for(q=0;q<xaxis.length;q++)
+        myGameArea.context.clearRect(xaxis[q]*scale,yaxis[q]*scale,scale, scale);
+    }   
+ 
+}
+
+function checkForMeetFoodAndCreateNewFood()
+{
+	
+        if(xaxis[0]==foodx&&yaxis[0]==foody)
+	{
+			xaxis.push(foodx);
+			yaxis.push(foody);
+		    foodx=Math.floor(Math.random() * 65) + 0;
+	            foody=Math.floor(Math.random() * 25) + 0;
+		    var c=myGameArea.context;
+		     c.fillStyle ="green";
+			for(q=-9;q<=9;q++)
+			for(w=-9;w<=9;w++)
+			{
+				if(q*q+w*w<(scale*scale)/4)
+				c.fillRect(foodx*scale+q+9,foody*scale+w+9,1,1);
+			}
+        	   
+	             score++;
+		     if(score%benchPoint==0&&level>1)
+		     level--;
+		
+	}	
+}
+function checkForEdge()
+{
+	document.getElementById("test").innerHTML=xaxis[0]+"\n "+yaxis[0];
+	if(xaxis[0]>63||xaxis[0]<0||yaxis[0]<0||yaxis[0]>24)
+	{
+		document.getElementById("gameStatus").innerHTML="GameOver";
+		document.getElementById("gameStatus").style.visibility="visible";
+		gameStatus="over";
+	}
+}
+function checkForSnakeContact()
+{
+	for(q=1;q<xaxis.length;q++)
+	if(xaxis[0]==xaxis[q]&&yaxis[0]==yaxis[q])
+	{
+		document.getElementById("gameStatus").innerHTML="GameOver";
+		document.getElementById("gameStatus").style.visibility="visible";
+		gameStatus="over";
+	}
+	
+}
+function updateTimeAndScore()
+{
+	document.getElementById("time").innerHTML="time: "+time+"";
+	document.getElementById("score").innerHTML="score: "+score+"";
+	document.getElementById("level").innerHTML="level: "+level+"";
+	
+}
+function updateGameArea() {
+	delay++;
+        delay=delay%level;
+	if(gameStatus=="notover"&&delay==0)
+        { 
+            time++;
+	    updateTimeAndScore();	
+    	    checkForEdge();
+	    checkForSnakeContact();
+  	    checkForMeetFoodAndCreateNewFood();
+	    myGamePiece.clear();
+	    myGamePiece.newPos();    
+  	    myGamePiece.update();
+	}
+	
+}
+ $(document).ready(function(){
+    $("*").keydown(function(e){
+	
+	
+	if(e.which==37&&myGamePiece.speedX==0)
+	{
+		if(gameStatus=="paused")
+		{
+			document.getElementById("gameStatus").style.visibility="hidden";
+			gameStatus="notover";
+		}
+		myGamePiece.speedY=0;
+		myGamePiece.speedX =- accelaration; 
+	}
+        if(e.which==38&&myGamePiece.speedY==0)
+	{
+		if(gameStatus=="paused")
+		{
+			 document.getElementById("gameStatus").style.visibility="hidden";
+			gameStatus="notover";
+		}
+		myGamePiece.speedX=0;
+		myGamePiece.speedY =- accelaration; 
+	}
+	
+	if(e.which==39&&myGamePiece.speedX==0)
+	{
+		if(gameStatus=="paused")
+		{
+			document.getElementById("gameStatus").style.visibility="hidden";
+		     gameStatus="notover";
+		}
+		myGamePiece.speedY=0;
+		myGamePiece.speedX = accelaration;
+	} 
+        if(e.which==40&&myGamePiece.speedY==0)
+	{
+		if(gameStatus=="paused")
+		{
+
+			document.getElementById("gameStatus").style.visibility="hidden";
+			gameStatus="notover";
+		}
+		myGamePiece.speedX=0;
+		myGamePiece.speedY = accelaration;
+	} 
+	if(e.which==32)
+	{
+		
+		myGamePiece.speedX=0;
+		myGamePiece.speedY=0;
+		if(gameStatus=="notover")
+		{
+		document.getElementById("gameStatus").innerHTML="Paused";
+		document.getElementById("gameStatus").style.visibility="visible";
+	        gameStatus="paused";
+		}
+		
+		
+	}
+	if(e.which==76)
+	{
+		if(level>1)
+		level=level-1;
+	}
+	
+	
+    });
+});
+
+
+
+
+</script>
+
+ <div class="label"  id="time" >time : 0 </div>
+<div class="label" id="score" >score : 0 </div>
+<div class="label" id="level" >level : 0 </div>	
+<div class="label" id="test" ></div>	
+<div id="gameStatus" class="notify" id="n"></div>
+
+</body>
+</html>

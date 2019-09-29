@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Horizontal bar</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        #test1{
+            overflow-x: scroll;
+            height : 200px ;
+            display: flex ; 
+            flex-direction: row ;
+            overflow : auto;
+
+        }
+        .card{
+                min-width : 200px ;
+                float: left;
+                margin : 10px ;
+        }
+    </style>
+</head>
+<body>
+    <div  id="test1" class=" p-2 m-2 ">
+            <span class="card bg-primary">
+                <div class="card-body">
+                        <h3>hello </h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur   </p>    
+                </div>
+            </span>
+            <span class="card bg-secondary">
+                <div class="card-body">
+                        <h3>hello </h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur   </p>    
+                </div>
+            </span>
+            <span class="card bg-success">
+                <div class="card-body">
+                        <h3>hello </h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur   </p>    
+                </div>
+            </span>
+            <span class="card bg-danger">
+                <div class="card-body">
+                    <h3>hello </h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur   </p>    
+                 </div>
+            </span>
+            <span class="card bg-info">
+                <div class="card-body">
+                    <h3>hello </h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur   </p>    
+                 </div>
+            </span>
+      </div>         
+                
+       
+</body>
+</html>

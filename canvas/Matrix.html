@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>work space</title>
+	<style>
+		div{
+		height : 10px;
+		width : 10px;
+		margin : 1px;
+		background-color : black;
+		float:left;
+		color : green;
+		}
+		body{
+		background-color : black;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+		scale=10;
+		a=[];
+		for(i=0;i<=30;i++)
+		{
+			b=[];
+			for(j=0;j<=110;j++)
+			{
+				x=document.createElement("div");
+				r=Math.floor(Math.random()*89)+10;
+				x.style.color="#00"+r+"00";
+				
+				b.push(x);
+				document.body.appendChild(b[j]);
+			}
+			a.push(b);
+		}
+		interval = setInterval(fun,1);
+		function fun(){
+			for(i=30;i=>0;i--)
+			for(j=0;j<=110;j++)
+			{ 	
+				r=Math.floor(Math.random()*88)+10;
+				a[i][j].style.color="#00"+r+"00";
+				r=Math.floor(Math.random()*10)+0;
+				a[i][j].innerHTML=""+r;	
+				
+			}
+			
+		}
+	
+	</script>
+</body>
+</html>
+	

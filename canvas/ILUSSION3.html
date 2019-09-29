@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title> Waves </title>
+	<style>
+		canvas{
+			border : 1px solid black;
+			}
+	</style>
+</head>
+<body>
+<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+<script>
+	canvas = document.createElement("canvas");
+	canvas.width = 1300;
+	canvas.height = 700;
+	context = this.canvas.getContext("2d");
+	document.body.insertBefore(canvas,document.body.childNodes[0]);
+	context.fillStyle="green";
+	setInterval(waveGenerator,10);
+	time=0;
+	function waveGenerator(){
+	context.clearRect(0,0,1300,1300);
+	temp=time++;
+	for(temp=time;temp>0;temp=temp-5){
+		//chooseRandomColor();
+		drawCircle(650,400,temp);
+	}
+	}
+	function chooseRandomColor(){
+		switch(Math.floor(Math.random()*4)){
+			case 0 : context.fillStyle="red";break;
+			case 1 : context.fillStyle="blue";break;
+			case 2 : context.fillStyle="green";break;
+			case 3 : context.fillStyle="yellow";break;
+		}
+	}
+	function drawCircle(x,y,r){
+	for(i=-r;i<=r;i++)
+	for(j=-r;j<=r;j++){
+	if(Math.floor(Math.sqrt(i*i+j*j))==r)
+	context.fillRect(x+i,y+j,1,1);
+	}
+	}
+</script>
+</body>
+</html>

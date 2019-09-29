@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Opacity gradient</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="short icon" href="s-icon.png">
+    <style>
+       .card{
+           width : 90%;
+           height: 200px;
+           margin : auto;
+       }
+       #cg{
+        background-image: linear-gradient(to right, red , yellow);
+       }
+       #og{
+           height: 100%;
+           background-image: linear-gradient(to right,rgba(0,0,0,1),rgba(0,0,0,1),rgba(255,0,0,0));
+       }
+       #ogc{
+           color: white;
+           background-image: url("./2.jpg");
+       }
+    </style>
+</head>
+<body>
+    <div class="card" id="cg">
+
+        <div class="card-body">
+            <h1>color-gradient</h1>
+        </div>
+    </div>
+    <div class="card" id="ogc">
+        <div id="og">
+               <div class="card-body">
+                   <h3>Razzi</h3>
+                   <p>A small indian actor alia butt play a role of a small indian who comes to a city and live there</p>
+                    <button class="btn  btn-outline-primary"> watch</button>
+                    <button class="btn btn-outline-success"> + wishlist</button>
+                </div>
+        </div>
+        
+    </div>
+</body>
+</html>

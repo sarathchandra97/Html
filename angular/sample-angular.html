@@ -1,0 +1,122 @@
+<!DOCTYPE html >
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sample angular</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+</head>
+<body>
+        <div class="container" ng-app="myApp">
+            <header class="jumbotron">
+                <h2>Sample todo App <small> Using angular js</small></h2>
+            </header>
+                <div class="card-columns">
+                        <div class="card bg-dark text-white " ng-controller='todoc'>
+                                <div class="card-header h5  ">Todo App <small><i class="fa fa-cog" ng-click="clearTodo()"></i></small> </div>
+                                <div class="card-body h5">
+                                    <ul class="list-unstyled">
+                                       <li ng-repeat='todo in todos'>
+                                          <input type="checkbox" class="bg-dark"> {{todo}}
+                                       </li>
+                                    </ul>
+                                    <form ng-submit='addTodo()'>
+                                        <div class="input-group">
+                                            <input type="text" ng-model='nextTodo' placeholder="Add next Todo" class="form-control text-white bg-dark">
+                                            <input type="submit" class="btn btn-outline-success">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card bg-dark text-white " ng-controller='todoc'>
+                                    <div class="card-header h5  ">Todo App <small><i class="fa fa-cog" ng-click="clearTodo()"></i></small> </div>
+                                    <div class="card-body h5">
+                                        <ul class="list-unstyled">
+                                           <li ng-repeat='todo in todos'>
+                                              <input type="checkbox" class="bg-dark"> {{todo}}
+                                           </li>
+                                        </ul>
+                                        <form ng-submit='addTodo()'>
+                                            <div class="input-group">
+                                                <input type="text" ng-model='nextTodo' placeholder="Add next Todo" class="form-control text-white bg-dark">
+                                                <input type="submit" class="btn btn-outline-success">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card bg-dark text-white " ng-controller='todoc'>
+                                        <div class="card-header h5  ">Todo App <small><i class="fa fa-cog" ng-click="clearTodo()"></i></small> </div>
+                                        <div class="card-body h5">
+                                            <ul class="list-unstyled">
+                                               <li ng-repeat='todo in todos'>
+                                                  <input type="checkbox" class="bg-dark"> {{todo}}
+                                               </li>
+                                            </ul>
+                                            <form ng-submit='addTodo()'>
+                                                <div class="input-group">
+                                                    <input type="text" ng-model='nextTodo' placeholder="Add next Todo" class="form-control text-white bg-dark">
+                                                    <input type="submit" class="btn btn-outline-success">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-dark text-white " ng-controller='todoc'>
+                                            <div class="card-header h5  ">Todo App <small><i class="fa fa-cog" ng-click="clearTodo()"></i></small> </div>
+                                            <div class="card-body h5">
+                                                <ul class="list-unstyled">
+                                                   <li ng-repeat='todo in todos'>
+                                                      <input type="checkbox" class="bg-dark"> {{todo}}
+                                                   </li>
+                                                </ul>
+                                                <form ng-submit='addTodo()'>
+                                                    <div class="input-group">
+                                                        <input type="text" ng-model='nextTodo' placeholder="Add next Todo" class="form-control text-white bg-dark">
+                                                        <input type="submit" class="btn btn-outline-success">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-dark text-white " ng-controller='todoc'>
+                                                <div class="card-header h5  ">Todo App <small><i class="fa fa-cog" ng-click="clearTodo()"></i></small> </div>
+                                                <div class="card-body h5">
+                                                    <ul class="list-unstyled">
+                                                       <li ng-repeat='todo in todos'>
+                                                          <input type="checkbox" class="bg-dark"> {{todo}}
+                                                       </li>
+                                                    </ul>
+                                                    <form ng-submit='addTodo()'>
+                                                        <div class="input-group">
+                                                            <input type="text" ng-model='nextTodo' placeholder="Add next Todo" class="form-control text-white bg-dark">
+                                                            <input type="submit" class="btn btn-outline-success">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+            
+                </div>
+               
+
+                <script>
+                var app = angular.module('myApp', []);
+                app.controller('todoc',function($scope){
+                    $scope.todos = ['Add next Todo'];
+                    $scope.addTodo = function(){
+                        $scope.todos.push($scope.nextTodo);
+                        $scope.nextTodo = '';
+                    };
+                    $scope.clearTodo = function(){
+                        $scope.todos = ['Add next Todo'];
+                    };
+                  
+                }); 
+                </script>
+        </div>
+</body>
+</html>

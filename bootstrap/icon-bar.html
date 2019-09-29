@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Icon bar</title>
+    <link rel="short icon" href="./s-icon.png">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <style> 
+        a{
+            color: white;
+
+        }    </style>
+</head>
+<body>
+    <!--
+        Here jumbotron is good lookin with display rather then the head
+        the small is used to tell the desctiption of the icon 
+        to increase the size of the icon use to increase the anchor take size not 
+
+        easiet way for the icon bar is flex and list of icons
+
+        bootstrap of the icon
+     -->
+    <div class="jumbotron mb-0">
+            <div class="display-3">Icon Bar</div>
+            <small>Using bootstrap trying to use create a icon bar</small>
+    </div>
+    <span class="d-flex flex-column justify-content-center align-item-center bg-secondary p-2 text-white" style="width: 70px;z-index:-1;">
+            <a class="active" href="#"><i class="fa fa-facebook fa-2x m-2"></i></a> 
+            <a href="#"><i class="fa fa-instagram fa-2x m-2"></i></a> 
+            <a href="#"><i class="fa fa-pinterest fa-2x m-2"></i></a> 
+            <a href="#"><i class="fa fa-reddit fa-2x m-2"></i></a>
+            <a href="#"><i class="fa fa-whatsapp fa-2x m-2"></i></a>
+    </span>
+    <div class="container" style="z-index:-1;">
+        loremloremloremloremloremloremloremloremlorem
+    </div>
+
+</body>
+</html>

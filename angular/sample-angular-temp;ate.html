@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <title>Sample angular template</title>
+</head>
+<body ng-app='satm' ng-controller='satc'>
+    <h1>hello</h1>
+    <input type="text" ng-model='name' ng-click="$scope.name = 'sarath'">
+    <ul>
+        <li ng-for='s in names'>{{s}}</li>
+    </ul>
+<script>
+var sam = angular.module('satm',[]);
+sam.controller('satc', function($scope){
+        $scope.names = ['sarath','chandra'];
+    });
+</script>
+</body>
+</html>

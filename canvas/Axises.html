@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+    border:8px solid black;
+    background-color: #f1f1f1;
+}
+	.label{
+	position :absolute; 
+	top : 0px; 
+	left : 100px;
+	height : 20px;
+	width : 70px;
+	
+	color : black;
+	font-size : 20px;
+	margin : 10px;
+	border-sizing : border-box;
+	float : left;
+	padding : 5px;
+	align : center;
+	}
+	.xaxis{
+	border : 2px solid black;
+	height : 700px;
+	width : 0px;
+	top : 0px;
+	position : absolute;
+	}
+	.yaxis{
+	border : 2px solid black;
+	height : 0px;
+	width : 1300px;
+	position : absolute;
+	}
+	.notify{
+	background-color : red;
+	height :1300px;
+	width : 1300px;
+	position : absolute;
+	opacity : 0;
+	}
+</style>
+</head>
+<body onmousemove="fun(event)">
+<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+<script>
+function fun(event){
+document.getElementById("test").innerHTML="("+event.clientX+","+event.clientY+")";
+document.getElementById("test").style.top = event.clientY+"px";
+document.getElementById("test").style.left = event.clientX+"px";
+document.getElementById("xaxis").style.left= event.clientX+"px";
+document.getElementById("yaxis").style.top = event.clientY+"px";
+
+
+}
+</script>
+<div class="notify" id="notiify"></div>
+<div class="label" id="test" ></div>	
+<div class="xaxis" id="xaxis"></div>
+<div class="yaxis" id="yaxis"></div>
+
+<div></div>
+
+</body>
+</html>

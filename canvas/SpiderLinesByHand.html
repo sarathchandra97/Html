@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title> Spider Lines </title>
+	<style>
+		canvas{
+			border : 1px solid black;
+			}
+	</style>
+</head>
+<body>
+<div id="test">hello</div>
+<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+<script>
+	canvas = document.createElement("canvas");
+	canvas.width = 1300;
+	canvas.height = 650;
+	context = this.canvas.getContext("2d");
+	document.body.insertBefore(canvas,document.body.childNodes[0]);
+	context.fillStyle="green";
+	a=[];
+	
+	setInterval(fun,1000);
+	function fun(){
+	
+	connectLines(Math.floor(Math.random()*1000+100,Math.floor(Math.random()*700+100)));
+	}
+	function connectLines(x,y){
+	a.push([x,y]);
+	for(i=0;i<a.length;i++){
+	context.beginPath();
+	context.moveTo(x,y);
+	context.lineTo(a[i][0],a[i][1]);
+	context.stroke();
+	}
+	
+	}
+	
+	$(document).ready(function(){
+	 $(canvas).mouseup(function(e){
+		connectLines(e.clientX,e.clientY);	
+		});
+		});
+	
+</script>
+</body>
+</html>

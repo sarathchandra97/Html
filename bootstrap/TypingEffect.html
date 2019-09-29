@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Typing Effect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="short icon" href="../assets/s-icon.png">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="jumbotron display-3" >
+       Hello <span id="demo"></span>
+    </div>
+    <script>
+        var i = 0;
+        var txt = 'Sarath!!!!';
+        var speed = 500;
+
+        function typeWriter() {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+        
+            i++;
+            
+             if(i == txt.length){
+                document.getElementById("demo").innerHTML =" ";
+                i= 0;
+            }
+            
+            setTimeout(typeWriter, speed);
+        }
+         typeWriter();
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>triangle</title>
+	<style>
+		
+		canvas {
+    border:1px solid black;
+  
+}
+	</style>
+</head>
+<body>
+
+	<script>
+		canvas=document.createElement("canvas");
+  		canvas.width = 1300;
+  		canvas.height=500;
+  		context = this.canvas.getContext("2d");
+		document.body.insertBefore(canvas,document.body.childNodes[0]);
+		context.fillStyle="green";
+		
+		pos=200;
+		setInterval(fun,1);
+		time=0;
+		x=0;
+		y=0;
+		state="left";
+		size=10;
+		function fun(){
+			
+			time++;
+			if(time%100==0)
+			switch(Math.floor(Math.random()*3)){
+			case 0 : context.fillStyle="green";
+				break;
+			case 1 : context.fillStyle="red";
+				break;
+			case 2 : context.fillStyle="blue";
+				break;
+			case 3 : context.fillStyle="blue";
+				 break;
+			}
+			time=time%300;
+			if(time<100)
+			state="left";
+			else if(time<200)
+			state="bottom";
+			else if(time<300)
+			state="right";
+			//context.clearRect(0,0,1300,1300);
+			if(state=="left")
+			context.fillRect(pos+x--,pos+y++,size,size);
+			if(state=="right")
+			context.fillRect(pos+x--,pos+y--,size,size);
+			if(state=="bottom")
+			context.fillRect(pos+(x+=2),pos+y,size,size);
+			document.getElementById("test").innerHTML=Math.floor(Math.random()*10);
+		}
+		
+	</script>
+	<div id="test"></div>
+</body>
+</html>
+	

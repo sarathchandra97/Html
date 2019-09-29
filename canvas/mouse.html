@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+    border:8px solid black;
+    background-color: #f1f1f1;
+}
+	.label{
+	height : 50px;
+	width : 100px;
+	background-color : lightblue;
+	color : black;
+	font-size : 25px;
+	margin : 10px;
+	border-sizing : border-box;
+	float : left;
+	padding : 10px;
+	align : center;
+	}
+	.notify{
+	background-color : red;
+	height : 550px;
+	width : 1320px;
+	position : absolute;
+	top : 0px;
+	left : 0px;
+	opacity : 0;
+	}
+</style>
+</head>
+<body onload="startGame()">
+<script src="C:\Program Files (x86)\jquery\jquery-3.2.1.min.js"></script>
+<script>
+
+//x:0  65 y:0 25
+var scale=20;
+
+
+ canvas=document.createElement("canvas");
+  canvas.width = 1300;
+  canvas.height=500;
+  context = this.canvas.getContext("2d");
+ document.body.insertBefore(canvas,document.body.childNodes[0]);
+
+function fun(event){
+document.getElementById("test").innerHTML="X:"+event.clientX+" "+"Y:"+event.clientY;
+context.fillStyle="green";
+x=Math.floor(event.clientX/scale);
+y=Math.floor(event.clientY/scale);
+context.fillRect(x*scale,y*scale,scale,scale);
+}
+
+
+</script>
+
+ <div class="label"  id="time" >time : 0 </div>
+<div class="label" id="score" >score : 0 </div>
+<div class="label" id="level" >level : 0 </div>	
+<div class="label" id="test" ></div>	
+<div id="gameStatus" class="notify" onmousemove="fun(event)"></div>
+
+</body>
+</html>
