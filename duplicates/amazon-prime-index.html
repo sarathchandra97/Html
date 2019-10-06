@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prime Vedio</title>
+    <link rel="shortcut icon" href="./assests/icon/prime-icon.png">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <style>
+        .has-search .form-control {
+    padding-left: 2.375rem;
+}
+    .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+            <div class="navbar-brand h1">
+                <span class="text-primary">prime</span>vedio
+            </div>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#cnb">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="cnb" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#" class="text-white nav-link h6">Home</a></li>
+                            <li class="nav-item"><a href="#" class="text-white nav-link h6">Tv shows</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link text-white h6">Movies</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link text-white h6">Kids</a></li>
+                        </ul>
+            </div>
+            <div class="form-group has-search mr-3">
+                    <span class="fa fa-search form-control-feedback text-white"></span>
+                    <input type="text" class="form-control bg-dark text-white" placeholder="Search">
+                  </div>
+            <div class="dropdown dropdown mr-5">
+                        <div class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-1x fa-user-o "></i>
+                        </div>
+                        <ul class="dropdown-menu mr-5">
+                          <a href="#" class="dropdown-item"><i class="fa   fa-glass fa-500x "></i> Your watchlsit</a>
+                          <a href="#" class="dropdown-item"><i class="fa   fa-cog fa-500x "></i> Account settings</a>
+                          <a href="#" class="dropdown-item"><i class="fa   fa-cog fa-500x "></i> Help</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="#" class="dropdown-item"> <i class="fa fa-sign-out fa-500x "></i> sign out</a>
+                        </ul>
+            </div>
+             
+              
+    </nav>
+    <div id="demo" class="carousel slide" data-ride="slide">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1" ></li>
+            <li data-target="#demo" data-slide-to="2" ></li>
+        </ul>
+        <div class="carousel-inner">
+                <div class="carousel-item active"><img class="img-fluid" src="./assests/carousel/1.jpg" alt="Los Angles"></div>
+                <div class="carousel-item"><img class="img-fluid" src="./assests/carousel/2.jpg" alt="Los Angles"></div>
+                <div class="carousel-item"><img class="img-fluid" src="./assests/carousel/3.jpg" alt="Los Angles"></div>
+        </div>
+        <a href="#demo" class="carousel-control-prev p-0" style="margin-left:-5%" data-slide="prev">
+             <span class="fa fa-angle-left fa-5x p-1"></span>
+        </a>
+        <a href="#demo" class="carousel-control-next" data-slide="next">
+            <span class="fa fa-angle-right fa-5x"></span>
+        </a>
+    </div>
+    <div class="container-fluid">
+            <h5 class="mt-2">Recently watched <small class="text-primary">edit <i class="fa fa-pencil"></i></small></h5>
+           
+    </div>
+    <div id="recentwatchlist" class="carousel slide">
+            <div class="carousel-inner">
+                    <div class="carousel-item active">
+                            <div class="row container-fluid">
+                                    <img src="./assests/movies/english/lionsgate-2550006LGINT_IN-Full-Image_GalleryCover-rw-RW-1498255871892._RI_VnvocY3dth8MTzQk1Dcj4KmIxAXaku_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/english/paramount-1104-943D-91F3-96F1-2896-7_IN-Full-Image_GalleryCover-rw-RW-1506561300645._RI_VaxgQ2kI76bXQtsqNd1vSkTYUZPLskGr_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/english/sphe-4505-A328-E027-6B3A-1ACB-Z_IN-Full-Image_GalleryCover-rw-RW-1535674625401._RI_VUANv4rzIFNeAZwMVLHU68DxrPGfHr7_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/english/wb-2054354_6000071213_IN-Full-Image_GalleryCover-rw-RW-1532713058631._RI_VHrDTadM4gfIrPlMz4OL6EFXDAet6xcq_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                            </div>
+                    </div>
+                    <div class="carousel-item">
+                            <div class="row container-fluid">
+                                    <img src="./assests/movies/hindhi/dharma-de73-3a79-ead1-1545-de73-3-Full-Image_GalleryCover-in-IN-1480722407702._RI_VGBZQgLZh9K2jLMBR3hsd2hFYpWCynL6U_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/hindhi/dharma-Dharma_Productions_Dhadak-Full-Image_GalleryCover-rw-RW-1538781075813._RI_VAOP3tGoJITz5VkkVWpb1lZqhzjzcg8Hn_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/hindhi/dharma-Dharma_Productions_Ok_Jaanu-Full-Image_GalleryCover-hi-IN-1492796199892._RI_VBn28Kz2FDmeXJcqDnoKJC6UmUY1ZfE1S_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/hindhi/skv-skv_race3-Full-Image_GalleryCover-rw-RW-1535673063635._RI_VxL4XLHd6I2sZNJpYraQPpHZeba696QBX_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                            </div>
+                    </div>
+                    <div class="carousel-item">
+                            <div class="row container-fluid">
+                                    <img src="./assests/movies/hindhi/sphe-4B5E-32E4-3EE7-0C3F-C53C-J_IN-Full-Image_GalleryCover-rw-RW-1519426863838._RI_Vvg4ufiq7rPdrgi5YNVSgoew3AFZBW1h_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/hindhi/tseries-Hate_Story_IV_2018-Full-Image_GalleryCover-rw-RW-1526569995076._RI_VbRAuuMISZnK72Vk0N4MkxV5cNcV5Cwl_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/hindhi/tseries-Karwaan_2018-Full-Image_GalleryCover-rw-RW-1538762667841._RI_VzeZAMDllzx4qPI0yREtUbUsqtVVa5lY_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                    <img src="./assests/movies/hindhi/dharma-de73-3a79-ead1-1545-de73-3-Full-Image_GalleryCover-in-IN-1480722407702._RI_VGBZQgLZh9K2jLMBR3hsd2hFYpWCynL6U_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                            </div>
+                    </div>
+            </div>
+            <a href="#recentwatchlist" class="carousel-control-prev" data-slide="prev">
+                 <span class="fa fa-angle-left fa-5x"></span>
+            </a>
+            <a href="#recentwatchlist" class="carousel-control-next" data-slide="next">
+                <span class="fa fa-angle-right fa-5x "></span>
+                
+            </a>
+        </div>
+        <!-- section 2-->
+        <div class="container-fluid">
+                <h5 class="mt-2">Latest Movies </h5>
+               
+        </div>
+        <div id="latestmovies" class="carousel slide">
+                <div class="carousel-inner">
+                        <div class="carousel-item active">
+                                <div class="row container-fluid">
+                                        <img src="./assests/movies/telugu/mango_mass-MMM_Goodachari_2018-Full-Image_GalleryCover-rw-RW-1536972083903._RI_VwcavLE3cClfLj1xaugIBv6Zxrwc56b_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/comedy/amazon_studios-COMS_S1_STM_IN-Full-Image_GalleryCover-rw-RW-1531415817764._RI_VCFPdSkLGnmMGGLvVmTQeaxccMvA8yor_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/telugu/sillymonks-Rajarani_SM-Full-Image_GalleryCover-hi-IN-1488573401642._RI_VM7CiAwj4WzEc67xW3zfblDKQ1wzUnWX5_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/tseries-Karwaan_2018-Full-Image_GalleryCover-rw-RW-1538762667841._RI_VzeZAMDllzx4qPI0yREtUbUsqtVVa5lY_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                                </div>
+                        </div>
+                        <div class="carousel-item">
+                                <div class="row container-fluid">
+                                        <img src="./assests/movies/hindhi/dharma-de73-3a79-ead1-1545-de73-3-Full-Image_GalleryCover-in-IN-1480722407702._RI_VGBZQgLZh9K2jLMBR3hsd2hFYpWCynL6U_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/dharma-Dharma_Productions_Dhadak-Full-Image_GalleryCover-rw-RW-1538781075813._RI_VAOP3tGoJITz5VkkVWpb1lZqhzjzcg8Hn_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/dharma-Dharma_Productions_Ok_Jaanu-Full-Image_GalleryCover-hi-IN-1492796199892._RI_VBn28Kz2FDmeXJcqDnoKJC6UmUY1ZfE1S_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/skv-skv_race3-Full-Image_GalleryCover-rw-RW-1535673063635._RI_VxL4XLHd6I2sZNJpYraQPpHZeba696QBX_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                                </div>
+                        </div>
+                        <div class="carousel-item">
+                                <div class="row container-fluid">
+                                        <img src="./assests/movies/hindhi/sphe-4B5E-32E4-3EE7-0C3F-C53C-J_IN-Full-Image_GalleryCover-rw-RW-1519426863838._RI_Vvg4ufiq7rPdrgi5YNVSgoew3AFZBW1h_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/tseries-Hate_Story_IV_2018-Full-Image_GalleryCover-rw-RW-1526569995076._RI_VbRAuuMISZnK72Vk0N4MkxV5cNcV5Cwl_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/tseries-Karwaan_2018-Full-Image_GalleryCover-rw-RW-1538762667841._RI_VzeZAMDllzx4qPI0yREtUbUsqtVVa5lY_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/dharma-de73-3a79-ead1-1545-de73-3-Full-Image_GalleryCover-in-IN-1480722407702._RI_VGBZQgLZh9K2jLMBR3hsd2hFYpWCynL6U_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                                </div>
+                        </div>
+                </div>
+                <a href="#latestmovies" class="carousel-control-prev" data-slide="prev">
+                    <span class="fa fa-angle-left fa-5x"></span>
+                </a>
+                <a href="#latestmovies" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon fa-5x"></span>
+                </a>
+            </div>
+        <!-- section 2-->
+        <div class="container-fluid">
+                <h5 class="mt-2">Comedy</h5>
+               
+        </div>
+        <div id="comedy" class="carousel slide">
+                <div class="carousel-inner">
+                        <div class="carousel-item active">
+                                <div class="row container-fluid">
+                                        <img src="./assests/comedy/oml-OML_BISWA_BMA_SUS_IN-Full-Image_GalleryCover-rw-RW-1495818413706._RI_VTJA5MNTJBec24K2axWKwthddQFAaXPV_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/comedy/amazon_studios-COMS_S1_STM_IN-Full-Image_GalleryCover-rw-RW-1531415817764._RI_VCFPdSkLGnmMGGLvVmTQeaxccMvA8yor_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/comedy/oml-OML_KANAN_KIR_SUS_IN-Full-Image_GalleryCover-hi-IN-1494632284796._RI_V20askS4RDSwWeRPDfJa72tKszyThtUwF_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/comedy/oml-OML_KENNY_DBTG_SUS_IN-Full-Image_GalleryCover-hi-IN-1492796201614._RI_VuXMrHh7WcIFhKhreXFdKgfsk7mEKwbqz_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                                </div>
+                        </div>
+                        <div class="carousel-item">
+                                <div class="row container-fluid">
+                                        <img src="./assests/comedy/oml-OML_ZAKIR_HSS_SUS_IN-Full-Image_GalleryCover-rw-RW-1500078289932._RI_VUjqT4lNQh9RimxOyjpTv1Ilt0fx2OXb_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/comedy/amazon_studios-COMS_S1_STM_IN-Full-Image_GalleryCover-rw-RW-1531415817764._RI_VCFPdSkLGnmMGGLvVmTQeaxccMvA8yor_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/comedy/oml-OML_BISWA_BMA_SUS_IN-Full-Image_GalleryCover-rw-RW-1495818413706._RI_VTJA5MNTJBec24K2axWKwthddQFAaXPV_TTW_SX356_FMjpg_.jpg" style="height: 100%" class="col col-sm-3">
+                                        <img src="./assests/movies/hindhi/skv-skv_race3-Full-Image_GalleryCover-rw-RW-1535673063635._RI_VxL4XLHd6I2sZNJpYraQPpHZeba696QBX_TTW_SX356_FMjpg_.jpg"  style="height: 100%" class="col col-sm-3">
+                                </div>
+                        </div>
+                      
+                </div>
+                <a href="#comedy" class="carousel-control-prev" data-slide="prev">
+                     <span class="fa fa-angle-left fa-5x"></span>
+                </a>
+                <a href="#comedy" class="carousel-control-next" data-slide="next">
+                    <span class="fa fa-angle-right fa-5x"></span>
+                </a>
+            </div>
+           	<div class="jumbotron bg-dark">	</div>
+           	<table  class="table">
+           		<tr>
+           			<td>hello</td>
+           			<td>hello</td>
+           		</tr>
+           	</table>
+</body>
+</html>
