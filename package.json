@@ -1,0 +1,25 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarathchandra97/Html.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarathchandra97/Html/issues"
+  },
+  "homepage": "https://github.com/sarathchandra97/Html#readme",
+  "dependencies": {
+    "chartjs": "^0.3.24",
+    "clear": "file:bootstrap",
+    "fontawesome": "^5.6.3",
+    "jquery": "^3.4.1"
+  }
+}

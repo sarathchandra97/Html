@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WMS website</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <!---
+        These are the navbar 
+            Home 
+                Dashboard 
+                pre release bashboard 
+                bundle history
+                pre release dashboard
+                events
+            Artist 
+            Album 
+            Playlist 
+            Vendor 
+            Supplier 
+            Help
+        -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Broadcast</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Dashboards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Artist</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="#">Album</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Playlist</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vendor</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Supplier</a>
+            </li>
+
+          <li class="nav-item">
+                  <a class="nav-link" href="#">Help</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!--
+        Jumbotron for help
+    -->
+    
+      <div class="jumbotron bg-dark text-white">
+          <div class="row">
+              <div class="col col-md-3">
+                  <h4>Help</h4>
+                  <ul>
+                      <li>Dashbords</li>
+                      <ul>
+                          <li>Home</li>
+                          <li>Error</li>
+                          <li>Pre-order</li>
+                      </ul>
+                      <li>Detail Pages</li>
+                      <ul>
+                          <li>Artist </li>
+                          <li>Album</li>
+                          <li>Playlist</li>
+                          <li>Venodor</li>
+                          <li>Supplier</li>
+                      </ul>
+                  </ul>
+                    
+              </div>
+              <div class="col col-md-3">
+                    <h4>My Notes</h4>
+                    <ul>
+                        <li>table </li>
+                        <ul>
+                            <li>stripped</li>
+                        </ul>
+
+                    </ul>
+                      
+                </div>
+              <div class="col col-md-6">
+                    <p class="text-center">
+                            <h4>Notes</h4>  
+                            <ul>
+                                  <li>The dasboard displays the status of the latest 500 items in the ingestion-catalog workflow.</li>
+                                  <li>To download the XML of a feed, click the link "Download Feed". You will be taken to an error screen if there is something wrong with the download</li>
+                                  <li>To reprocess a feed, click the link "Reprocess Feed". A screen will pop either confirming that the feed is being reprocessed, or displaying an error if the screen could not be reprocessed.</li>
+                                  <li>You can filter the displayed results by typing into the box labeled "Filter" Below. Filtering happens interactively. Filtering is available for DMIDs, ASINs, External Ids, and any of the process states. For example, to see all the items that have failed status, type "failed" into the filter box</li>
+                              </ul>
+                          </p>
+              </div>
+          </div>
+          
+      </div>
+      <!--
+        Main Ingestion table
+        wms 
+            dmid 
+            upc [could be removed]
+            album title 
+            album artist 
+            feedId 
+            ExternalId 
+            Bundle delivery Time 
+            stage
+            download and retry
+        my additon 
+            retry 
+      -->
+      <div class="row">
+          <div class="col-md-5">
+              hi
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-5"></div>
+      </div>
+      
+    
+        
+</body>
+</html>
