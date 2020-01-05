@@ -19,6 +19,7 @@
   "dependencies": {
     "chartjs": "^0.3.24",
     "clear": "file:bootstrap",
+    "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
     "jquery": "^3.4.1"
   }
